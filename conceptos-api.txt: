@@ -1,0 +1,8 @@
+Esta ruta de Express recibe un reporte enviado por el usuario y le responde confirmando que los datos llegaron correctamente.
+app.post('/reporte', ...): Configura el servidor para escuchar peticiones que utilicen el método POST específicamente en la dirección (URL) /reporte. Como vimos antes, el método POST se usa para enviar o registrar nueva información.
+req.body.mensaje: req significa request (petición). Esta línea extrae el texto del reporte (llamado mensaje) que el usuario incluyó dentro del cuerpo de su envío (el body del formulario o de la aplicación).
+res.json({...}): res significa response (respuesta). El servidor le devuelve al usuario una respuesta automática en formato JSON. Esta respuesta contiene un estado de éxito ("Reporte recibido") y le muestra de vuelta el mismo mensaje que envió para confirmar que se leyó bien.
+1. Gestión de Reportes Ciudadanos
+Permite a los usuarios enviar alertas sobre problemas en el barrio directamente a los administradores:
+Daños públicos: Reportar un bache en la calle, una farola rota o acumulación de basura.
+Seguridad: Enviar una alerta sobre actividad sospechosa en una zona específica.
