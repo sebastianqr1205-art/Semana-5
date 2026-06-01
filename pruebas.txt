@@ -1,1 +1,24 @@
+const express = require('express');
+const app = express();
+const PORT = 3000;
 
+// 1. Ruta raíz: http://localhost:3000
+app.get('/', (req, res) => {
+    res.send('¡Bienvenido al servidor local!');
+});
+
+// 2. Ruta saludo: http://localhost:3000/saludo
+app.get('/saludo', (req, res) => {
+    res.send('¡Hola! Espero que tengas un excelente día.');
+});
+
+// 3. Ruta dinámica: http://localhost:3000/mensaje/juan
+app.get('/mensaje/:nombre', (req, res) => {
+    const nombreUsuario = req.params.nombre;
+    res.send(`Hola ${nombreUsuario}, este es un mensaje personalizado para ti.`);
+});
+
+// Iniciar el servidor en el puerto 3000
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
